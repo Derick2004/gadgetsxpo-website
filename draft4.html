@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blush: #fdf2f4;
+            --rose: #e8b4b8;
+            --deep-rose: #c98b91;
+            --wine: #7d3c4a;
+            --text-dark: #4a2c33;
+            --text-soft: #8a6b71;
+            --cream: #fffaf8;
+            --shadow-soft: 0 10px 30px rgba(125, 60, 74, 0.08);
+            --shadow-medium: 0 15px 40px rgba(125, 60, 74, 0.15);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Lora', Georgia, serif;
+            --font-script: 'Great Vibes', cursive;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            /* Night sky gradient background */
+            background: linear-gradient(180deg,
+                #0a0e27 0%,
+                #131a3a 25%,
+                #1a1f4a 50%,
+                #2a1f4a 75%,
+                #1e1535 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============================================================
+           NIGHT SKY BACKGROUND (STARS + SHOOTING STARS)
+           ============================================================ */
+        .night-sky {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        /* Static twinkling stars */
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle ease-in-out infinite;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* Shooting stars */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8),
+                        0 0 20px 4px rgba(200, 220, 255, 0.4);
+            animation: shoot linear infinite;
+        }
+
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(to left,
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0));
+            transform: translateY(-50%);
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translate(0, 0) rotate(35deg);
+                opacity: 0;
+            }
+            5% { opacity: 1; }
+            60% { opacity: 1; }
+            100% {
+                transform: translate(600px, 420px) rotate(35deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================================
+           LAYOUT
+           ============================================================ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 600;
+            text-align: center;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: rgba(255, 250, 248, 0.7);
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 0 auto 2rem;
+            max-width: 240px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(232, 180, 184, 0.6), transparent);
+        }
+
+        .divider span {
+            color: var(--rose);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            padding-top: 4rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-script);
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            color: var(--rose);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 16px rgba(232, 180, 184, 0.4);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--cream);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-note {
+            color: rgba(255, 250, 248, 0.7);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        /* ============================================================
+           ENVELOPE / LOVE LETTER
+           ============================================================ */
+        .envelope-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 1rem;
+        }
+
+        .envelope-wrapper {
+            perspective: 1200px;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            background: var(--cream);
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border: 1px solid rgba(201, 139, 145, 0.3);
+        }
+
+        .envelope:hover:not(.opened) {
+            transform: translateY(-6px) scale(1.01);
+        }
+
+        .envelope.opened {
+            cursor: default;
+            transform: none;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .envelope-back {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #fbe4e7, #f6d5da);
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .letter {
+            position: absolute;
+            left: 4%;
+            right: 4%;
+            top: 6%;
+            bottom: 6%;
+            background: var(--cream);
+            border-radius: 6px;
+            padding: 1.75rem 1.5rem;
+            overflow-y: auto;
+            z-index: 2;
+            box-shadow: 0 2px 12px rgba(125, 60, 74, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+            pointer-events: none;
+            border: 1px solid rgba(201, 139, 145, 0.25);
+        }
+
+        .envelope.opened .letter {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            z-index: 5;
+        }
+
+        .letter-content {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        .letter-line {
+            opacity: 0;
+            transform: translateY(8px);
+            min-height: 1.9em;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            white-space: pre-wrap;
+        }
+
+        .letter-line.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .letter-line.signature {
+            font-family: var(--font-script);
+            font-size: 1.6rem;
+            color: var(--deep-rose);
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+
+        .envelope-front {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .envelope-front::before,
+        .envelope-front::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 51%;
+            height: 62%;
+            background: linear-gradient(135deg, #f9dde1, #f3cdd3);
+            z-index: 3;
+        }
+
+        .envelope-front::before {
+            left: 0;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            border-radius: 0 0 0 10px;
+        }
+
+        .envelope-front::after {
+            right: 0;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            border-radius: 0 0 10px 0;
+        }
+
+        .envelope-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, #f3cdd3, #f6d5da);
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            z-index: 3;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 55%;
+            background: linear-gradient(to bottom, #f6d5da, #f9dde1);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 4;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 4px 10px rgba(125, 60, 74, 0.08);
+        }
+
+        .envelope.opened .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .wax-seal {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 68px;
+            background: radial-gradient(circle at 35% 30%, #b85464, #7d3c4a);
+            border-radius: 50%;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fdf2f4;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(125, 60, 74, 0.4),
+                        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+                        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .envelope.opened .wax-seal {
+            transform: translate(-50%, -50%) scale(0) rotate(90deg);
+            opacity: 0;
+        }
+
+        .tap-hint {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: rgba(255, 250, 248, 0.7);
+            font-style: italic;
+            font-size: 0.95rem;
+            animation: pulse 2s ease-in-out infinite;
+            transition: opacity 0.4s ease;
+        }
+
+        .tap-hint.hidden {
+            opacity: 0;
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ============================================================
+           COUNTDOWN
+           ============================================================ */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 180, 184, 0.3);
+            border-radius: 16px;
+            padding: 1.25rem 1rem;
+            min-width: 88px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-number {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255, 250, 248, 0.7);
+            margin-top: 0.4rem;
+        }
+
+        .countdown-message {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            color: var(--rose);
+            min-height: 2.5rem;
+            text-shadow: 0 2px 16px rgba(232, 180, 184, 0.4);
+        }
+
+        /* ============================================================
+           TIMELINE
+           ============================================================ */
+        .timeline {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom,
+                transparent,
+                rgba(232, 180, 184, 0.6) 8%,
+                rgba(232, 180, 184, 0.6) 92%,
+                transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 1rem 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 1.6rem;
+            width: 18px;
+            height: 18px;
+            background: var(--deep-rose);
+            border: 3px solid #1a1f4a;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(232, 180, 184, 0.3),
+                        0 0 16px rgba(232, 180, 184, 0.6);
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -9px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -9px;
+        }
+
+        .timeline-card {
+            background: rgba(255, 250, 248, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(232, 180, 184, 0.4);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .timeline-date {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--deep-rose);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--wine);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
+        .timeline-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #fbe4e7, #f6d5da);
+            border: 1px dashed rgba(201, 139, 145, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-soft);
+            font-size: 0.85rem;
+            font-style: italic;
+            overflow: hidden;
+        }
+
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding: 0.5rem 0 0.5rem 3rem;
+            }
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 11px;
+                right: auto;
+            }
+        }
+
+        /* ============================================================
+           BIRTHDAY WISH
+           ============================================================ */
+        .birthday-wish {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+
+        .birthday-wish .big-text {
+            font-family: var(--font-script);
+            font-size: clamp(3rem, 9vw, 5.5rem);
+            color: var(--rose);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 24px rgba(232, 180, 184, 0.5);
+        }
+
+        .birthday-wish h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: var(--cream);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .birthday-wish p {
+            max-width: 640px;
+            margin: 0 auto 1rem;
+            color: rgba(255, 250, 248, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .birthday-wish .thanks {
+            font-style: italic;
+            color: rgba(255, 250, 248, 0.75);
+        }
+
+        /* ============================================================
+           PROMISE / ASSURANCE
+           ============================================================ */
+        .promise-section {
+            background: rgba(255, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin: 2rem auto 4rem;
+            max-width: 760px;
+            border: 1px solid rgba(232, 180, 184, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .promise-section .promise-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .promise-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            color: var(--wine);
+            margin-bottom: 1.25rem;
+        }
+
+        .promise-section p {
+            color: var(--text-dark);
+            font-size: 1.02rem;
+            line-height: 1.9;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+
+        .promise-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            text-align: center;
+            padding: 2.5rem 1rem 3rem;
+            color: rgba(255, 250, 248, 0.6);
+            font-size: 0.9rem;
+            font-style: italic;
+            border-top: 1px solid rgba(232, 180, 184, 0.3);
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-footer .heart {
+            color: var(--rose);
+        }
+
+        /* ============================================================
+           SCROLL REVEAL
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           REDUCED MOTION
+           ============================================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         NIGHT SKY BACKGROUND (STARS + SHOOTING STARS)
+         ============================================================ -->
+    <div class="night-sky" id="nightSky" aria-hidden="true"></div>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header class="hero">
+        <div class="container">
+            <p class="hero-subtitle">A little something for you</p>
+            <h1>Happy Birthday, My Love</h1>
+            <p class="hero-note">Scroll down — I made this just for you.</p>
+            <div class="divider"><span>★</span></div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         1. LOVE LETTER (ENVELOPE)
+         ============================================================ -->
+    <section class="envelope-section">
+        <div class="container">
+            <h2 class="section-heading">A Letter For You</h2>
+            <p class="section-subtitle">Tap the envelope to open it</p>
+
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open love letter">
+                    <div class="envelope-back"></div>
+
+                    <div class="letter" id="letter">
+                        <div class="letter-content" id="letterContent">
+                            <!-- ================================================
+                                 ❤️ FILL IN YOUR LOVE LETTER BELOW ❤️
+                                 Each <p class="letter-line"> is one line that
+                                 types itself out sequentially. Add, remove, or
+                                 edit lines freely. Keep the signature last.
+                                 ================================================ -->
+                            <p class="letter-line">My dearest [Her Name],</p>
+                            <p class="letter-line">[Write your first line here — something sweet to start.]</p>
+                            <p class="letter-line">[Write your second line here — a memory, a feeling, a promise.]</p>
+                            <p class="letter-line">[Write your third line here.]</p>
+                            <p class="letter-line">[Write your fourth line here.]</p>
+                            <p class="letter-line">[Write your final line before the signature.]</p>
+                            <p class="letter-line signature">Forever yours,<br>[Your Name]</p>
+                            <!-- ❤️ END OF LETTER ❤️ -->
+                        </div>
+                    </div>
+
+                    <div class="envelope-front"></div>
+                    <div class="envelope-bottom"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="wax-seal">♥</div>
+                </div>
+            </div>
+            <p class="tap-hint" id="tapHint">♡ tap to open ♡</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         2. BIRTHDAY COUNTDOWN
+         ============================================================ -->
+    <section class="countdown-section reveal">
+        <div class="container">
+            <h2 class="section-heading">Counting Down to Your Day</h2>
+            <p class="section-subtitle">Until November 12th</p>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cdDays">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cdHours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cdMinutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cdSeconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+
+            <p class="countdown-message" id="countdownMessage"></p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         3. TIMELINE
+         ============================================================ -->
+    <section class="timeline-section reveal">
+        <div class="container">
+            <h2 class="section-heading">Our Story</h2>
+            <p class="section-subtitle">Every moment with you is my favorite</p>
+
+            <div class="timeline">
+                <!-- ================================================
+                     ❤️ FILL IN YOUR TIMELINE BELOW ❤️
+                     Copy a <div class="timeline-item"> block for each
+                     memory. To add a photo, replace the contents of
+                     the .timeline-image div with:
+                       <img src="photos/your-photo.jpg" alt="description">
+                     ================================================ -->
+
+                <!-- Memory 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">[Date — e.g., June 2022]</div>
+                        <h3 class="timeline-title">[The day we met]</h3>
+                        <p class="timeline-description">[Write about the day you met — where you were, what you noticed first, how it felt.]</p>
+                        <div class="timeline-image">
+                            <!-- Replace with: <img src="photos/first-meeting.jpg" alt="The day we met"> -->
+                            [Photo placeholder]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">[Date]</div>
+                        <h3 class="timeline-title">[Our first date / a special moment]</h3>
+                        <p class="timeline-description">[Describe the memory — the place, the laughter, the little details only you two remember.]</p>
+                        <div class="timeline-image">
+                            [Photo placeholder]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">[Date]</div>
+                        <h3 class="timeline-title">[A trip / adventure together]</h3>
+                        <p class="timeline-description">[Write about a trip, a spontaneous adventure, or a day that stands out.]</p>
+                        <div class="timeline-image">
+                            [Photo placeholder]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">[Date]</div>
+                        <h3 class="timeline-title">[A milestone or favorite memory]</h3>
+                        <p class="timeline-description">[A milestone, an inside joke, a quiet evening — anything that made you smile.]</p>
+                        <div class="timeline-image">
+                            [Photo placeholder]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more .timeline-item blocks as needed -->
+                <!-- ❤️ END OF TIMELINE ❤️ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         4. BIRTHDAY WISH
+         ============================================================ -->
+    <section class="birthday-wish reveal">
+        <div class="container">
+            <div class="big-text">Happy Birthday</div>
+            <h2>To the one who makes my world brighter</h2>
+            <!-- ================================================
+                 ❤️ FILL IN YOUR BIRTHDAY MESSAGE BELOW ❤️
+                 ================================================ -->
+            <p>[Write your heartfelt birthday wish here. Tell her what she means to you and why today is special.]</p>
+            <p class="thanks">[Thank her for all the best memories — the laughter, the adventures, the little everyday moments that became your favorites.]</p>
+            <!-- ❤️ END OF BIRTHDAY MESSAGE ❤️ -->
+        </div>
+    </section>
+
+    <!-- ============================================================
+         5. PROMISE / ASSURANCE
+         ============================================================ -->
+    <section class="promise-section reveal">
+        <div class="promise-icon">💌</div>
+        <h2>A Promise, From Me to You</h2>
+        <!-- ================================================
+             ❤️ FILL IN YOUR ASSURANCE BELOW ❤️
+             ================================================ -->
+        <p>[Assure her of your love and commitment here. Let her know she is safe, cherished, and that you'll be there for her — today and always.]</p>
+        <p>[Add another line of reassurance, or a promise about the year ahead together.]</p>
+        <!-- ❤️ END OF ASSURANCE ❤️ -->
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <p>Made with <span class="heart">♥</span> just for you.</p>
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+    <script>
+        (function () {
+            'use strict';
+
+            /* ========================================================
+               1. NIGHT SKY BACKGROUND (STARS + SHOOTING STARS)
+               ======================================================== */
+            function createNightSky() {
+                var sky = document.getElementById('nightSky');
+                if (!sky) return;
+
+                // --- Twinkling stars ---
+                var starCount = 140;
+                for (var i = 0; i < starCount; i++) {
+                    var star = document.createElement('div');
+                    star.className = 'star';
+                    var size = (Math.random() * 2.5 + 0.5).toFixed(2);
+                    star.style.width = size + 'px';
+                    star.style.height = size + 'px';
+                    star.style.left = (Math.random() * 100) + '%';
+                    star.style.top = (Math.random() * 100) + '%';
+                    star.style.animationDuration = (2 + Math.random() * 4).toFixed(2) + 's';
+                    star.style.animationDelay = (Math.random() * 5).toFixed(2) + 's';
+                    star.style.opacity = (0.3 + Math.random() * 0.7).toFixed(2);
+                    sky.appendChild(star);
+                }
+
+                // --- Shooting stars ---
+                var shootingStarCount = 4;
+                for (var j = 0; j < shootingStarCount; j++) {
+                    var shooter = document.createElement('div');
+                    shooter.className = 'shooting-star';
+                    // Start from top-left region so they travel across the sky
+                    shooter.style.left = (Math.random() * 40) + '%';
+                    shooter.style.top = (Math.random() * 40) + '%';
+                    shooter.style.animationDuration = (4 + Math.random() * 4).toFixed(2) + 's';
+                    shooter.style.animationDelay = (Math.random() * 10).toFixed(2) + 's';
+                    sky.appendChild(shooter);
+                }
+            }
+
+            /* ========================================================
+               2. ENVELOPE + TYPEWRITER LETTER
+               ======================================================== */
+            function initLoveLetter() {
+                var envelope = document.getElementById('envelope');
+                var tapHint = document.getElementById('tapHint');
+                if (!envelope) return;
+
+                var lines = Array.prototype.slice.call(
+                    document.querySelectorAll('.letter-line')
+                );
+                var opened = false;
+                var typing = false;
+
+                function revealLinesSequentially() {
+                    if (typing) return;
+                    typing = true;
+
+                    var index = 0;
+
+                    function revealNext() {
+                        if (index >= lines.length) {
+                            typing = false;
+                            return;
+                        }
+                        var el = lines[index];
+                        el.classList.add('visible');
+                        index++;
+                        window.setTimeout(revealNext, 900);
+                    }
+
+                    window.setTimeout(revealNext, 600);
+                }
+
+                function openEnvelope() {
+                    if (opened) return;
+                    opened = true;
+
+                    envelope.classList.add('opened');
+                    envelope.setAttribute('aria-label', 'Love letter opened');
+
+                    if (tapHint) {
+                        tapHint.classList.add('hidden');
+                    }
+
+                    revealLinesSequentially();
+                }
+
+                envelope.addEventListener('click', openEnvelope);
+
+                envelope.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                        e.preventDefault();
+                        openEnvelope();
+                    }
+                });
+            }
+
+            /* ========================================================
+               3. BIRTHDAY COUNTDOWN (November 12)
+               ======================================================== */
+            function initCountdown() {
+                var daysEl = document.getElementById('cdDays');
+                var hoursEl = document.getElementById('cdHours');
+                var minutesEl = document.getElementById('cdMinutes');
+                var secondsEl = document.getElementById('cdSeconds');
+                var messageEl = document.getElementById('countdownMessage');
+
+                if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+                var BIRTH_MONTH = 10; // November (0-indexed)
+                var BIRTH_DAY = 12;
+
+                function pad(n) {
+                    return String(n).padStart(2, '0');
+                }
+
+                function getTarget() {
+                    var now = new Date();
+
+                    if (now.getMonth() === BIRTH_MONTH && now.getDate() === BIRTH_DAY) {
+                        return { isToday: true, target: null };
+                    }
+
+                    var target = new Date(
+                        now.getFullYear(),
+                        BIRTH_MONTH,
+                        BIRTH_DAY,
+                        0, 0, 0, 0
+                    );
+
+                    if (now.getTime() > target.getTime()) {
+                        target = new Date(
+                            now.getFullYear() + 1,
+                            BIRTH_MONTH,
+                            BIRTH_DAY,
+                            0, 0, 0, 0
+                        );
+                    }
+
+                    return { isToday: false, target: target };
+                }
+
+                function update() {
+                    var info = getTarget();
+
+                    if (info.isToday) {
+                        daysEl.textContent = '00';
+                        hoursEl.textContent = '00';
+                        minutesEl.textContent = '00';
+                        secondsEl.textContent = '00';
+                        if (messageEl) {
+                            messageEl.textContent = '🎉 Today is your day — Happy Birthday! 🎉';
+                        }
+                        return;
+                    }
+
+                    if (messageEl) {
+                        messageEl.textContent = '';
+                    }
+
+                    var now = new Date();
+                    var diff = info.target.getTime() - now.getTime();
+
+                    if (diff <= 0) {
+                        if (messageEl) {
+                            messageEl.textContent = '🎉 Today is your day — Happy Birthday! 🎉';
+                        }
+                        return;
+                    }
+
+                    var totalSeconds = Math.floor(diff / 1000);
+                    var days = Math.floor(totalSeconds / 86400);
+                    var hours = Math.floor((totalSeconds % 86400) / 3600);
+                    var minutes = Math.floor((totalSeconds % 3600) / 60);
+                    var seconds = totalSeconds % 60;
+
+                    daysEl.textContent = pad(days);
+                    hoursEl.textContent = pad(hours);
+                    minutesEl.textContent = pad(minutes);
+                    secondsEl.textContent = pad(seconds);
+                }
+
+                update();
+                window.setInterval(update, 1000);
+            }
+
+            /* ========================================================
+               4. SCROLL REVEAL ANIMATIONS
+               ======================================================== */
+            function initScrollReveal() {
+                var elements = Array.prototype.slice.call(
+                    document.querySelectorAll('.reveal')
+                );
+
+                if (elements.length === 0) return;
+
+                if (!('IntersectionObserver' in window)) {
+                    elements.forEach(function (el) {
+                        el.classList.add('visible');
+                    });
+                    return;
+                }
+
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                elements.forEach(function (el) {
+                    observer.observe(el);
+                });
+            }
+
+            /* ========================================================
+               INITIALISE EVERYTHING ON DOM READY
+               ======================================================== */
+            function init() {
+                createNightSky();
+                initLoveLetter();
+                initCountdown();
+                initScrollReveal();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>

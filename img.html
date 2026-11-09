@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --accent: #2563eb;
+      --border: #e5e5e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --text: #f0f0f0;
+        --muted: #a0a0a0;
+        --accent: #60a5fa;
+        --border: #2a2a2a;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.25rem;
+    }
+    nav a:hover { color: var(--accent); }
+
+    h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+    h2 { font-size: 1.4rem; margin: 2rem 0 0.5rem; }
+    p { margin-bottom: 1rem; color: var(--muted); }
+
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <strong>Brand</strong>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Welcome</h1>
+      <p>A short introduction goes here. Replace this text with your own content.</p>
+      <a href="#contact" class="button">Get in touch</a>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Describe what this page or project is about.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Add your contact details or a form here.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Your Name. All rights reserved.
+  </footer>
+
+</body>
+</html>
